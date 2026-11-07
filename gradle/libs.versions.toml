@@ -1,0 +1,32 @@
+# Versions follow TicketMan's, the apps using this
+[versions]
+agp = "9.1.1"
+android-compileSdk = "37"
+android-minSdk = "25"
+composeMultiplatform = "1.12.2"
+material3 = "1.9.0"
+kotlin = "2.4.20"
+kotlinx-coroutines = "1.11.0"
+kotlinx-datetime = "0.7.1"
+haze = "2.0.1"
+tm-applogger = "0.1.0"
+
+[libraries]
+runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatform" }
+foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
+ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
+components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
+material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
+haze = { module = "dev.chrisbanes.haze:haze", version.ref = "haze" }
+haze-blur = { module = "dev.chrisbanes.haze:haze-blur", version.ref = "haze" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlinx-coroutinesSwing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+tm-applogger = { module = "org.mr0btain:tm-applogger", version.ref = "tm-applogger" }
+
+[plugins]
+androidMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
