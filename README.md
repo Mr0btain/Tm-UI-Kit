@@ -14,7 +14,7 @@ component is prefixed `Tm`, in package `org.mr0btain.uikit`:
 | `containers` | `TmPanel`, `TmDialog`, `TmConfirmDialog`, `TmConfirmDeleteDialog`, `TmTextEditDialog`, `TmFullScreenDialog`, `TmPageHeader`, `TmListRow`, `TmTabs`, `TmLazyColumn`, `TmScrollColumn` |
 | `feedback` | `TmBadge`, `TmDot`, `TmNotice`, `TmSnackbarContent`, `TmEmptyState`, `TmLoading` |
 | `data` | `TmTable`, `TmStatTile`, `TmCountBar`, `TmKeyValueRow`, `TmLogTerminal` (shows Tm-AppLogger's lines) |
-| `navigation` | `TmNavRail`, `TmBottomNav`, `TmTopBar`, `TmStepper` |
+| `navigation` | `TmAppShell` (a nav rail on wide windows, a bottom bar on phones, the backdrop and snackbar host), `TmNavRail`, `TmBottomNav`, `TmTopBar`, `TmStepper` |
 | `gallery` | `KitGallery`: every component in every state, with theme and font pickers |
 
 Fonts and icons ship inside the library, under `org.mr0btain.uikit.resources.Res`.
