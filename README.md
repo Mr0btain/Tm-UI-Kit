@@ -9,6 +9,7 @@ component is prefixed `Tm`, in package `org.mr0btain.uikit`:
 | `foundation` | `TmBackdrop`, glass (`TmGlassSurface`, `Modifier.glass()`, `glassSource()`) and solid `TmSurface`, hover/press/focus, control sizes, scrollbar |
 | `buttons` | `TmButton`, `TmIconButton`, `TmButtonRow` |
 | `inputs` | `TmTextField`, `TmPasswordField`, `TmFieldFrame`, `TmFieldPair` |
+| `files` | `TmPathField` (a picked file or folder with Browse; the app opens its own picker), `TmDropZone` (files dropped in from the file manager; desktop only, just the content elsewhere) |
 | `selection` | `TmDropdown`, `TmMenu`, `TmSegmented`, `TmFilterChip`, `TmSwitch`, `TmCheckbox`, `TmRadio` |
 | `search` | `TmSearchField`, `highlightMatch` |
 | `containers` | `TmPanel`, `TmDialog`, `TmConfirmDialog`, `TmConfirmDeleteDialog`, `TmTextEditDialog`, `TmFullScreenDialog`, `TmPageHeader`, `TmListRow`, `TmTabs`, `TmLazyColumn`, `TmScrollColumn` |
@@ -41,8 +42,8 @@ component built from kit pieces), give it a gallery entry, then use it.
 
 ```kotlin
 // libs.versions.toml
-tm-ui-kit = { module = "org.mr0btain:tm-ui-kit", version = "0.1.0" }
-tm-ui-kit-rules = { module = "org.mr0btain:tm-ui-kit-rules", version = "0.1.0" }
+tm-ui-kit = { module = "org.mr0btain:tm-ui-kit", version = "0.3.0" }
+tm-ui-kit-rules = { module = "org.mr0btain:tm-ui-kit-rules", version = "0.3.0" }
 
 // composeApp/build.gradle.kts
 commonMain.dependencies { implementation(libs.tm.ui.kit) }

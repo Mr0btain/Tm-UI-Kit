@@ -53,6 +53,8 @@ import org.mr0btain.uikit.feedback.TmLoading
 import org.mr0btain.uikit.feedback.TmNotice
 import org.mr0btain.uikit.feedback.TmNoticeKind
 import org.mr0btain.uikit.feedback.TmSnackbarContent
+import org.mr0btain.uikit.files.TmDropHighlight
+import org.mr0btain.uikit.files.TmPathField
 import org.mr0btain.uikit.foundation.TmControlSize
 import org.mr0btain.uikit.foundation.TmDivider
 import org.mr0btain.uikit.foundation.TmSurface
@@ -98,6 +100,7 @@ import org.mr0btain.uikit.theme.TmTone
 internal fun gallerySections(): List<@Composable () -> Unit> = listOf(
     { ButtonsSection() },
     { FieldsSection() },
+    { FilesSection() },
     { SelectionSection() },
     { SearchSection() },
     { BadgesSection() },
@@ -189,6 +192,34 @@ private fun FieldsSection() {
         Specimen("Large, for touch screens") {
             TmTextField(modifier = Modifier.width(320.dp), value = "", onValueChange = {}, placeholder = "Search", size = TmControlSize.LARGE)
             TmButton(text = "Find", onClick = {}, size = TmControlSize.LARGE)
+        }
+    }
+}
+
+// --------------------------------------- Files ---------------------------------------
+
+@Composable
+private fun FilesSection() {
+    var folder by remember { mutableStateOf<String?>("/home/dana/Videos/Converted") }
+
+    GallerySection(title = "Files", description = "Picking files and folders, or dropping them in from the file manager") {
+        TmPathField(
+            path = folder,
+            onBrowse = { folder = "/home/dana/Videos/Converted" },
+            onClear = { folder = null },
+            label = "Save to",
+            placeholder = "Next to each video",
+            supportingText = "Browse opens the app's own picker"
+        )
+        TmPathField(path = "/mnt/old-drive/ffmpeg", onBrowse = {}, label = "ffmpeg", error = "Not found there")
+
+        Specimen("A drop zone with files dragged over it") {
+            Box(Modifier.fillMaxWidth().height(120.dp)) {
+                TmSurface(modifier = Modifier.matchParentSize()) {
+                    TmEmptyState(title = "No videos yet", message = "Drop videos or folders here")
+                }
+                TmDropHighlight("Drop videos to add them")
+            }
         }
     }
 }
